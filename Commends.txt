@@ -1,0 +1,3 @@
+ oc get nodes
+ oc get pods
+ oc get pods -n default
