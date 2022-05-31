@@ -1,0 +1,35 @@
+kubectl get nodes
+kubectl get pods
+kubectl get pods -n default
+kubectl create ns dev-ns
+kubectl create ns test-ns --dry-run=client -o yaml > test-ns.aml
+kubectl apply -f .test-ns.yaml
+kubectl run nginxpod --image nginx
+kubectl run nginxpod --image nginx -n dev-ns
+kubectl delete pod nginxpod
+
+apiVersion
+kind
+metadata
+spec
+Status
+
+Storage & Ip addess not persistent & no recreation 
+
+pvc,pv,sc & service & controler
+
+Labels:-
+
+Replication Controler vs Replication Set vs deploy
+
+new version /roling updates/rollback/pause&Resume
+
+GKE
+
+Surge Roling Update (New-Old)& Recreation Stratagy(Old-New) (Deployment Stratagy)
+
+Canary Blue/green
+
+Service
+pvc,pv,sc
+
