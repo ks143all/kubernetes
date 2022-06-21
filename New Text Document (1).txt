@@ -1,0 +1,71 @@
+VM vs Container vs Pod vs Serverless
+
+9.Pod
+
+kubectl get pods
+kubectl get pods -o wide
+kubectl get pods -n default
+kubectl run samplepod --image=nginx --labels app=cart,owner=katra,env=dev
+kubectl get pod/samplepod -o yaml
+kubectl get pods --show-labels
+kubectl get nodes --show-labels
+kubectl label pod samplepod owner-
+kubectl label pod samplepod env=prod --overwrite
+kubectl get pods -l color=green,env=prod
+kubectl create ns dev-ns
+kubectl create ns test-ns
+kubectl apply -f test-ns.yaml
+kubectl run nginxpod --image nginx --dry-run=client -o yaml > pod.yaml
+kubectl run nginxpod --image nginx -n dev-ns
+kubectl exec -it nginxpod /bin/sh
+kubectl delete pod nginxpod
+kubectl create deploy nginx --image nginx --replicas 3
+kubectl scale deploy nginx --replicas 5
+kubectl expose deploy nginx --port 80 --target-port 80 --type NodePort
+kubectl expose deploy nginx --port 80 --target-port 80 --type ClusterIP
+kubectl describe svc nginx
+kubectl get ep nginx
+
+apiVersion
+kind
+metadata
+spec
+Status
+
+Storage & Ip addess not persistent & no recreation 
+
+pvc,pv,sc & service & controler
+
+9.Replication Controler vs Replication Set vs deploy
+
+new version /roling updates/rollback/pause&Resume
+
+GKE
+
+Surge Roling Update (New-Old)& Recreation Stratagy(Old-New) (Deployment Stratagy)
+
+Canary Blue/green
+
+10.Service:(labels and selector)
+
+NodePort Service Port Target Port
+ClusterIP
+LoadBalancer
+headless service
+
+11 &12 Volumes:
+
+pvc,pv,sc
+
+empty directory{}
+hostpath
+
+Statick Provisioning
+Dynamic Provisoining
+
+PV Capacity,VolumeMode,AccessMode,nfs
+PVC AccessMode,VolumeMode,resourec,StorageClassName
+
+PV -Cluster PVC-Namespeace Pod-Volume Container-Volume Mount
+AccessModes:ReadWriteOnce,ReadOnlyMeny,ReadWriteMeny
+

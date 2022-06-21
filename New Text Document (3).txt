@@ -1,0 +1,45 @@
+15.Security Config
+
+TLS Certificats
+
+16_1.Configaration of certificates &Role Base Access Controle
+
+Authorization x509/token/web hooks/Password
+
+Roles
+Clustr Roles
+
+Role Bindings
+Cluster Role Bindings
+	
+	openssl genrsa -out ks.key 2048
+	openssl req -new ks.key -out ks.csr -subj "/CN=ks/O=Devlopment"
+	Copy ca.key ca.crt 
+	openssl x509 -req -in ks.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out ks.crt -days 45
+	kubectl config set-credentials kumar --client-certificate=ks.crt --client-key=ks.key
+	vi ~/.kube/config
+	kubectl config set-context ks-context --cluster=kubernetes --user=kumar
+	kubectl config use-context ks-context
+	kubectl api-resources
+	kubectl get roles -n dev-ns
+	kubectl get rolebindings -n dev-ns
+	
+	kubectl config set-credentials ks --client-certificate=ks.crt --client-key=ks.key (User "ks" set)
+	kubectl config set-context ks1-context --cluster=kubernetes --user=ks (Context "ks1-context" created)
+	kubectl config use-context ks1-context (Switched to context "ks1-context")
+      
+      vi roles.yaml
+	vi rolebindings.yaml
+	kubectl apply -f roles.yaml
+	kubectl apply -f rolebindings.yaml
+
+16_2.Network Policies:
+
+17.Resource Alocation:
+
+Demon Sets
+Drain  
+Cordon & un Cordon 
+
+
+18.Upgradation:

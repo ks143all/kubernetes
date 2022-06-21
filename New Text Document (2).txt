@@ -1,0 +1,35 @@
+13.Default Schdular vs Advance Schduling :- 
+
+Schduling: Creation,Recreation,Scaling
+Execution: Running
+
+Nodename,Node Selector
+	filtering,scoring
+
+Node Afernity
+     requiredDuringSchedulingIgnoredDuringExecution
+     preferredDuringSchedulingIgnoredDuringExecution
+
+Node Anti Afernity
+
+Taint & Tolarence
+ 
+https://kubernetes.io/docs/concepts/scheduling-eviction/kube-scheduler/
+https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/
+
+kubectl get events
+
+14_1.ConfigMaps & Secrets(Encoded data):-
+
+Environment Variables
+Volumes
+
+cho -n 'Password1234' | base64
+kubectl get cm
+kubectl get secret
+
+14_2.Restart Policy:-
+
+Liveness Probe
+Readyness Probe
+

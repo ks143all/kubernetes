@@ -1,0 +1,62 @@
+3.Container Architechture_Commends_Images
+4.Images
+5.Networking Images
+
+
+Docker Architechture
+
+Client Server Architechture
+
+Docker Demon
+Rest API
+Docker CLI
+
+docker login
+Docker images
+Docker image ls
+Docker Container ls
+Docker ps
+Docker ps -a
+Docker pull ubuntu (Image Pull)
+Docker container create httpd (Image pull+Container Creation)
+docker container start 9a4bee91c650 (Container Start)
+docker run hello-world (Pull Creation Start)(Process Oriented then it will kill)
+docker run -d httpd
+docker run -it centos bash (df -h,ps -ef,ip addr)
+docker run -d --name myhttpd httpd 
+docker run -it alpine /bin/sh
+docker rm 73e5e6d72f84
+docker ps -aq
+docker rm 9a4bee91c650 -f
+docker rm $(docker ps -aq)
+docker container inspect d3a6f6c02d9f
+docker image inspect ubuntu
+docker container logs d3a6f6c02d9f
+docker container run --rm ubuntu date
+docker container run --rm --name deletecontainer ubuntu date
+docker cp 9a577ad8a0a5:/katra.txt .
+docker cp local.txt 9a577ad8a0a5:/local.txt
+docker attach 0b05ccbbef87
+docker exec -it 30f00d4f6bd8 /bin/sh
+
+Images:-
+
+docker run -it --name myubuntu ubuntu:18.04 /bin/bash
+apt install iputils-ping wget net-tools curl -y
+docker commit c0f3b3ba8b08 ks143all/myubuntuimage:custom
+docker push ks143all/myubuntuimage:custom
+
+export tar from container 
+import image from tar
+save tar from image
+load image from tar
+
+docker image inspect
+docker image history
+
+Networking & Volumes:-
+
+
+
+
+

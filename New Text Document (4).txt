@@ -1,0 +1,15 @@
+19.Ingress Controler & Helm
+
+NodePort
+ClisterPort
+LoadBalancer
+
+kubectl get ingress
+helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
+helm repo list
+helm install my-ingress-nginx ingress-nginx/ingress-nginx --version 4.0.13
+kubectl get pods
+kubectl apply -f blue.yaml
+kubectl apply -f svc.yaml
+kubectl apply -f ingress.yaml
+kubectl get ingress
